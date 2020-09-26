@@ -79,7 +79,7 @@ If a or b are not integers, a TypeError should be thrown
 	  >>> add_integer((1, 2, 3), 4)
 	  Traceback (most recent call last):
 	  TypeError: a must be an integer
-      
+
 If None is provided as input
    	  >>> add_integer(None)
 	  Traceback (most recent call last):
