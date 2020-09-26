@@ -1,0 +1,101 @@
+-===========================
+How to use 2-matrix_divided.py
+===========================
+Contains a function that divides elements of lists by a parameter. The values provided
+must be integers or floats in positive or negative value, otherwise, TypeError exceptions will be thrown
+along with subsequent error messages.
+	>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+Documentation
+=============
+	>>> module_doc = __import__("2-matrix_divided").__doc__
+	>>> print(len(module_doc) > 0)
+	True
+	>>> func_doc = __import__("2-matrix_divided").matrix_divided.__doc__
+	>>> print(len(func_doc) > 0)
+	True
+
+Integers
+========
+``matrix_divided()`` will take two parameters that must be integers and then add
+them together with the ``+`` operator.
+::
+General number divisions
+	>>> matrix_divided(matrix, 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+    [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 4)
+	198
+
+Utilizing the default value of b
+	>>> matrix_divided(2)
+	100
+
+Int max and min
+	>>> matrix_divided(2147483647, 0)
+	2147483647
+	>>> matrix_divided(-2147483648, 0)
+	-2147483648
+	>>> matrix_divided(2147483647, -2147483647)
+	0
+	>>> matrix_divided(-2147483648, 2147483647)
+	-1
+
+Negative numbers
+	 >>> matrix_divided(8, -5)
+	 3
+	 >>> matrix_divided(-5, 8)
+	 3
+	 >>> matrix_divided(-8, -8)
+	 -16
+         >>> matrix_divided(100, -2)
+	 98
+
+Floats
+======
+``matrix_divided()`` should typecast all floats to integers before adding them
+Floating point numbers
+	 >>> matrix_divided(98.3, -2)
+	 96
+	 >>> matrix_divided(100.3, 100.3)
+	 200
+	 >>> matrix_divided(100.32, 100.32)
+	 200
+
+TypeErrors
+==========
+If a or b are not integers, a TypeError should be thrown
+     	  >>> matrix_divided(4, "Test01")
+	  Traceback (most recent call last):
+	  TypeError: b must be an integer
+	  >>> matrix_divided("Test02", 4)
+	  Traceback (most recent call last):
+	  TypeError: a must be an integer
+	  >>> matrix_divided("MPB", "School")
+	  Traceback (most recent call last):
+	  TypeError: a must be an integer
+	  >>> matrix_divided([1, 2, 3], 4)
+	  Traceback (most recent call last):
+	  TypeError: a must be an integer
+	  >>> matrix_divided((1, 2, 3), 4)
+	  Traceback (most recent call last):
+	  TypeError: a must be an integer
+
+If None is provided as input
+   	  >>> matrix_divided(None)
+	  Traceback (most recent call last):
+	  TypeError: a must be an integer
+
+Infinity
+	  >>> matrix_divided(float('inf'), 2)
+	  Traceback (most recent call last):
+	  OverflowError: cannot convert float infinity to integer
+	  >>> matrix_divided(2, float('inf'))
+	  Traceback (most recent call last):
+	  OverflowError: cannot convert float infinity to integer
+	  >>> matrix_divided(-float('inf'), 5)
+	  Traceback (most recent call last):
+	  OverflowError: cannot convert float infinity to integer
+	  >>> matrix_divided(float('NaN'), 5)
+	  Traceback (most recent call last):
+	  ValueError: cannot convert float NaN to integer
