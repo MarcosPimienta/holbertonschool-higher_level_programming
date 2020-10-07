@@ -12,5 +12,5 @@ def read_lines(filename="", nb_lines=0):
             if not num:
                 break
             if i < nb_lines or nb_lines <= 0:
-                print (num[:-1])
+                print(num[:-1])
             i += 1
