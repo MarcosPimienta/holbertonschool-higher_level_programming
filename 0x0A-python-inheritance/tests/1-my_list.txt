@@ -5,15 +5,15 @@ The ''1-my_list'' module
 Using ''MyList''
 ----------------
 Checking docstring for module:
-        >>> __import__('1-my_list').__doc__ != None
-        True
+    >>> __import__('1-my_list').__doc__ != None
+    True
 
 Checking docstring for MyList:
-        >>> __import__('1-my_list').MyList.__doc__ != None
+    >>> __import__('1-my_list').MyList.__doc__ != None
     True
 
 Import ``MyList`` from the ``1-my_list`` module:
-        >>> MyList = __import__('1-my_list').MyList
+    >>> MyList = __import__('1-my_list').MyList
 
 Creating a new Instance:
     >>> my_list = MyList()
