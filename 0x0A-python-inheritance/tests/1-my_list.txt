@@ -1,8 +1,8 @@
 c
-The ``1-my_list`` module
-========================
+The ''1-my_list'' module
 
-Using ``MyList``
+
+Using ''MyList''
 ----------------
 Checking docstring for module:
         >>> __import__('1-my_list').__doc__ != None
