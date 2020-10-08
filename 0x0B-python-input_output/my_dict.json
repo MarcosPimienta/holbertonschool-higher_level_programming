@@ -1,1 +1,1 @@
-{"id": 12, "name": "John", "is_active": true, "places": ["San Francisco", "Tokyo"], "info": {"average": 3.14, "age": 36}}
+{"info": {"age": 36, "average": 3.14}, "is_active": true, "id": 12, "name": "John", "places": ["San Francisco", "Tokyo"]}
