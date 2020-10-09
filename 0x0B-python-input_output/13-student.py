@@ -26,4 +26,5 @@ class Student:
 
     def reload_from_json(self, json):
         """ retrieves a dictionary representation of a Student instance """
-        self.__dict__ = json
+        for i in json:
+            self.__dict__[i] = json[i]
