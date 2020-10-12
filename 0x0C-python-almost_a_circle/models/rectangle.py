@@ -97,5 +97,9 @@ class Rectangle(Base):
             for i in range(argslen):
                 setattr(self, attrs[i], args[i])
         else:
-            for key, value, in kwargs.items():
+            for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        dic2 = {"x": self.x, "y": self.y, "id": self.id, "height": self.height, "width": self.width}
+        return (dic2)
