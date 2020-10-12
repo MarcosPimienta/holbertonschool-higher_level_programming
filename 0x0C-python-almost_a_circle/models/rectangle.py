@@ -4,6 +4,7 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """Class rectangle"""
 
@@ -82,8 +83,9 @@ class Rectangle(Base):
         self.__x = value
 
     def display(self):
-        print("\n" * self.__y + (' ' * self.__x + "#" * self.width
-             + "\n") * self.height, end="")
+        print("\n" * self.__y + (' ' * self.__x + "#" * self.width + "\n") *
+              self.height, end="")
 
     def __str__(self):
-        return ("[Rectangle] ({}) {}/{} - {}/{})".format(self.id, self.x, self.y, self.width, self.height))
+        return ("[Rectangle] ({}) {}/{} - {}/{})"
+                .format(self.id, self.x, self.y, self.width, self.height))
