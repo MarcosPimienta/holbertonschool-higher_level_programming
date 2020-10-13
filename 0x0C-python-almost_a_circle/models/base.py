@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """Base class for test"""
-
-
 import json
 
 
@@ -11,7 +9,7 @@ class Base():
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Doc for constructor"""clear
+        """Doc for constructor"""
         if id is not None:
             self.id = id
         else:
