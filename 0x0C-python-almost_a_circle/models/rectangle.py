@@ -18,6 +18,7 @@ class Rectangle(Base):
         super().__init__(id)
 
     def area(self):
+        """Class rectangle area"""
         return (self.__width * self.__height)
 
     @property
@@ -26,6 +27,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
+        """Class rectangle height"""
         if type(value) != int:
             raise TypeError("height must be an integer")
         if value < 0:
@@ -33,6 +35,7 @@ class Rectangle(Base):
         self.__height = value
 
     def width(self, value):
+        """Class rectangle width"""
         if type(width) != int:
             raise TypeError("width must be an integer")
         if width < 0:
@@ -41,10 +44,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """Class rectangle width"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """Class rectangle width"""
         if type(value) != int:
             raise TypeError("width must be an integer")
         if value < 0:
@@ -53,10 +58,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """Class rectangle y"""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """Class rectangle y setter"""
         if type(value) != int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -64,6 +71,7 @@ class Rectangle(Base):
         self.__y = value
 
     def x(self, value):
+        """Class rectangle x setter"""
         if type(x) != int:
             raise TypeError("x must be an integer")
         if x < 0:
@@ -72,10 +80,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """Class rectangle x"""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """Class rectangle x setter"""
         if type(value) != int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -83,14 +93,17 @@ class Rectangle(Base):
         self.__x = value
 
     def display(self):
+        """Class rectangle display"""
         print("\n" * self.__y + (' ' * self.__x + "#" * self.width + "\n") *
               self.height, end="")
 
     def __str__(self):
+        """Class rectangle print"""
         return ("[Rectangle] ({}) {}/{} - {}/{})"
                 .format(self.id, self.x, self.y, self.width, self.height))
 
     def update(self, *args, **kwargs):
+        """Class rectangle update"""
         attrs = ["id", "width", "height", "x", "y"]
         argslen = len(args)
         if args is True:
@@ -101,6 +114,7 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
+        """Class rectangle to dictionary"""
         dic2 = {"x": self.x,
                 "y": self.y,
                 "id": self.id,
