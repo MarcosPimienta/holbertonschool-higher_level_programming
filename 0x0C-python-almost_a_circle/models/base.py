@@ -38,7 +38,8 @@ class Base():
     @staticmethod
     def from_json_string(json_string):
         """Doc for constructor"""
-        if json_string is None:
+        if not json_string :
             jstr = []
+            return jstr
         else:
             return json.loads(json_string)
