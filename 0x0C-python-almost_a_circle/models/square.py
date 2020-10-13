@@ -14,19 +14,23 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
+        """Class square printer"""
             return ("[Square] ({}) {}/{} - {})"
                     .format(self.id, self.x, self.y, self.width))
 
     @property
     def size(self):
+        """Class square getter"""
         return self.width
 
     @size.setter
     def size(self, value):
+        """Class square setter"""
         self.width = value
         self.height = value
 
     def update(self, *args, **kwargs):
+        """Class square update"""
         attrs = ["id", "size", "x", "y"]
         argslen = len(args)
         if args is not None and argslen is not 0:
@@ -37,5 +41,6 @@ class Square(Rectangle):
                 setattr(self, key, value)
 
     def to_dictionary(self):
+        """Class square to dictionary"""
         dic2 = {"x": self.x, "y": self.y, "id": self.id, "size": self.size}
         return (dic2)
