@@ -91,7 +91,7 @@ class Rectangle(Base):
         """Class rectangle update"""
         attrs = ["id", "width", "height", "x", "y"]
         argslen = len(args)
-        if args is True:
+        if args:
             for i in range(argslen):
                 setattr(self, attrs[i], args[i])
         else:
