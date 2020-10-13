@@ -34,3 +34,11 @@ class Base():
         filename = cls.__name__ + ".json"
         with open(filename, mode='w', encoding="UTF-8") as file:
             file.write(jstr)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Doc for constructor"""
+        if json_string is None:
+            jstr = []
+        else:
+            return json.loads(json_string)
