@@ -19,10 +19,11 @@ class Rectangle(Base):
 
     def area(self):
         """Class rectangle area"""
-        return (self.__width * self.__height)
+        return (self.width * self.height)
 
     @property
     def height(self):
+        """Class rectangle height"""
         return self.__height
 
     @height.setter
