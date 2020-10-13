@@ -38,7 +38,7 @@ class Base():
     @staticmethod
     def from_json_string(json_string):
         """Doc for constructor"""
-        if not json_string :
+        if not json_string:
             jstr = []
             return jstr
         else:
