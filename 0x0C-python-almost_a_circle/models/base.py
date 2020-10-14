@@ -65,3 +65,26 @@ class Base():
                 return [cls.create(**i) for i in jstr]
         except:
                 return jstr
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Doc for constructor"""
+        if list_objs is None:
+            jstr = "[]"
+        else:
+            jstr = cls.to_json_string([i.to_dictionary() for i in list_objs])
+        filename = cls.__name__ + ".csv"
+        with open(filename, mode='w', encoding="UTF-8") as file:
+            file.write(jstr)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Class Load"""
+        jstr = []
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, mode='r', encoding="UTF-8") as file:
+                jstr = cls.from_json_string(file.read())
+                return [cls.create(**i) for i in jstr]
+        except:
+                return jstr
