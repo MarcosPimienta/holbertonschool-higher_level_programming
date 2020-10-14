@@ -48,8 +48,8 @@ class Base():
     def create(cls, **dictionary):
         """Class square rectangle create"""
         if cls.__name__ == "Rectangle":
-            dummy = cls(1, 2, 3)
+            dummy = cls(2, 3)
         if cls.__name__ == "Square":
-            dummy = cls(1, 2, 3)
+            dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
