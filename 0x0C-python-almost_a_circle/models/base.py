@@ -59,7 +59,7 @@ class Base():
         """Class Load"""
         jstr = []
         filename = cls.__name__ + ".json"
-        if filename == None:
+        if filename is None:
             return jstr
         with open(filename, mode='r', encoding="UTF-8") as file:
             jstr = cls.from_json_string(file.read())
