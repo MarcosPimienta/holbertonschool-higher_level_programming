@@ -10,7 +10,7 @@ if __name__ == "__main__":
                          db="{}".format(argv[3]), port=3306)
     cur = db.cursor()
 
-    cur.execute("SELECT * FROM states WHERE name = '{}'".format(argv[4]))
+    cur.execute("SELECT * FROM states WHERE name = '{:%s}'".format(argv[4]))
     selects = cur.fetchall()
     for i in selects:
         print("{}".format(i))
