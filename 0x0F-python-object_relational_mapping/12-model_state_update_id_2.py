@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" SQLALCHEMY Session query update"""
+""" SQLALCHEMY Session query update by id"""
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
@@ -12,6 +12,6 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    session.query(State).filter(State.id == 2).update({"name":"New Mexico"})
+    session.query(State).filter(State.id == 2).update({"name": "New Mexico"})
     session.commit()
     session.close()
