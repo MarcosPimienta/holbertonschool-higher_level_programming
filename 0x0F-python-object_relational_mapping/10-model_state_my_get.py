@@ -15,4 +15,5 @@ if __name__ == "__main__":
     for state in session.query(State).filter_by(name=argv[4]):
         print("{}".format(state.id))
         exit()
+    print("Not found")
     session.close()
