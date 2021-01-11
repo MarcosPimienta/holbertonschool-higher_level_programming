@@ -5,5 +5,5 @@ with request.urlopen("https://intranet.hbtn.io/status") as resp:
     data = resp.read()
     html = data.decode()
 
-print("{}\n- type: {}\n- content: {}\n- utf8 content: '{}'"
+print("{}\n\t- type: {}\n\t- content: {}\n\t- utf8 content: '{}'"
       .format("Body response:", type(data), data, html))
