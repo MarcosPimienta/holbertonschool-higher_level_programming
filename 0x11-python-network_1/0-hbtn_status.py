@@ -8,4 +8,4 @@ if __name__ == "__main__":
         html = data.decode("UTF-8")
 
     print("{}\n\t- type: {}\n\t- content: {}\n\t- utf8 content: {}"
-        .format("Body response:", type(data), data, html))
+          .format("Body response:", type(data), data, html))
