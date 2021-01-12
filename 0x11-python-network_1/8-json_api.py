@@ -19,5 +19,5 @@ if __name__ == "__main__":
     elif len(jsonRes) == 0:
         print("No result")
     else:
-        jstring = jsonRes.get('[id]')
-        print(jstring, jsonRes['name'], sep=' ')
+        jstring = jsonRes.get('id')
+        print("[{}] {}".format(jstring, jsonRes['name']))
