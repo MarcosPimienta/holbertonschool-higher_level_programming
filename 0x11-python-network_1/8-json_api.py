@@ -13,11 +13,12 @@ if __name__ == "__main__":
         q = ""
     data = {"q": q}
     response = requests.post(url, data)
-    jsonRes = response.json()
-    if type(jsonRes) is not dict:
+    try:
+        jsonRes = response.json()
+        if jsonRes == {}:
+            print("No result")
+        else:
+            jstring = jsonRes.get('id')
+            print("[{}] {}".format(jstring, jsonRes['name']))
+    except ValueError:
         print("Not a valid JSON")
-    elif len(jsonRes) == 0:
-        print("No result")
-    else:
-        jstring = jsonRes.get('id')
-        print("[{}] {}".format(jstring, jsonRes['name']))
