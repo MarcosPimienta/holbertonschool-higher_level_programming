@@ -9,6 +9,6 @@ if __name__ == "__main__":
         url = sys.argv[1]
         response = requests.get(url)
         data = response.text
-        print("{}".format(data))
-    except requests.exceptions.HTTPError as e:
-        print("Error code: {}".format(e.code))
+        if response.status_code < 400:
+        else: """requests.exceptions.HTTPError as e:"""
+            print("Error code: {}".format(response.status_code))
