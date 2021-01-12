@@ -11,7 +11,7 @@ if __name__ == "__main__":
         q = sys.argv[1]
     else:
         q = ""
-    data = {"q" : q}
+    data = {"q": q}
     response = requests.post(url, data)
     jsonRes = response.json()
     if type(jsonRes) is not dict:
@@ -20,4 +20,4 @@ if __name__ == "__main__":
         print("No result")
     else:
         jstring = jsonRes.get('id')
-        print(jstring , jsonRes['name'], sep = ' ')
+        print(jstring, jsonRes['name'], sep=' ')
