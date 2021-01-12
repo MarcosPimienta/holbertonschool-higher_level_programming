@@ -5,10 +5,10 @@ import sys
 import requests
 
 if __name__ == "__main__":
-    try:
         url = sys.argv[1]
         response = requests.get(url)
         data = response.text
         if response.status_code < 400:
-        else: """requests.exceptions.HTTPError as e:"""
+            print("{}".format(data))
+        else:
             print("Error code: {}".format(response.status_code))
