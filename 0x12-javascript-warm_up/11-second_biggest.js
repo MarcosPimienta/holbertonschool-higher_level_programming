@@ -1,6 +1,5 @@
 #!/usr/bin/node
 
-
 let zero = 0;
 const numList = process.argv.slice(2);
 if (numList.length > 1) {
