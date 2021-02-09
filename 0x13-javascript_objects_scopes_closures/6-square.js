@@ -3,9 +3,8 @@
 const SquareX = require('./5-square');
 
 class Square extends SquareX {
-
   charPrint (C) {
-    if (C == null){
+    if (C == null) {
       C = 'X';
     }
     let i = 0;
