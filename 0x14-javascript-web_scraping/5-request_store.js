@@ -1,18 +1,23 @@
 #!/usr/bin/node
 
-const fs = require('fs');
-const path = process.argv[2];
-const file = process.argv[3];
+const request = require('request');
+const args = process.argv;
+const emptydic = {};
 
-const request = require('request')
-request(path, function (
-  error,
-  response,
-  body
-) {
-    fs.writeFile(file, body, 'utf-8', (err) => {
-        if (err) { console.log(err); }
-      });
-    console.log(body)
+request(args[2], function (error, response, body) {
+  if (error) {
+    console.log(error);
+  } else {
+    const bodyJson = JSON.parse(body);
+    for (const i of bodyJson) {
+      if (i.completed) {
+        if (emptydic[i.userId]) {
+          emptydic[i.userId] += 1;
+        } else {
+          emptydic[i.userId] = 1;
+        }
+      }
+    }
+  }
+  console.log(emptydic);
 });
-
